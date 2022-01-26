@@ -1,4 +1,4 @@
-package com.koa4.example.cache;
+package com.shortener.example.cache;
 
 public interface SimpleCache<K, V> {
 

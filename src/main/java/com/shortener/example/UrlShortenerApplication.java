@@ -1,11 +1,11 @@
-package com.koa4.example;
+package com.shortener.example;
 
-import com.koa4.example.cache.HitTrackingSimpleCache;
-import com.koa4.example.cache.HitTrackingSimpleCacheItem;
-import com.koa4.example.io.ShortenUrlCommand;
-import com.koa4.example.io.ShortenUrlUserInterface;
-import com.koa4.example.shortener.UrlShortener;
-import com.koa4.example.shortener.UrlShortenerResult;
+import com.shortener.example.cache.HitTrackingSimpleCache;
+import com.shortener.example.cache.HitTrackingSimpleCacheItem;
+import com.shortener.example.io.ShortenUrlCommand;
+import com.shortener.example.io.ShortenUrlUserInterface;
+import com.shortener.example.shortener.UrlShortener;
+import com.shortener.example.shortener.UrlShortenerResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -29,7 +29,8 @@ public class UrlShortenerApplication implements CommandLineRunner {
 	}
 
 	@Autowired
-	public UrlShortenerApplication(ShortenUrlUserInterface shortenUrlUserInterface, UrlShortener urlShortener, HitTrackingSimpleCache<String, String> hitTrackingSimpleCache) {
+	public UrlShortenerApplication(ShortenUrlUserInterface shortenUrlUserInterface, UrlShortener urlShortener,
+			HitTrackingSimpleCache<String, String> hitTrackingSimpleCache) {
 		this.shortenUrlUserInterface = shortenUrlUserInterface;
 		this.urlShortener = urlShortener;
 		this.hitTrackingSimpleCache = hitTrackingSimpleCache;
@@ -65,18 +66,15 @@ public class UrlShortenerApplication implements CommandLineRunner {
 		if (hitTrackingSimpleCache.containsKey(longUrl)) {
 			String shortUrl = hitTrackingSimpleCache.get(longUrl);
 			shortenUrlUserInterface.reportShortUrl(shortUrl);
-		}
-		else {
+		} else {
 			UrlShortenerResult result = urlShortener.shortenUrl(longUrl);
 			if (result.wasUrlShortenedSuccessfully()) {
 				hitTrackingSimpleCache.put(longUrl, result.getShortenedUrl());
 				shortenUrlUserInterface.reportShortUrl(result.getShortenedUrl());
-			}
-			else {
+			} else {
 				shortenUrlUserInterface.reportError(result.getErrorMessage());
 			}
 		}
 	}
 
 }
-

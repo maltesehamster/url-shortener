@@ -1,4 +1,4 @@
-package com.koa4.example.shortener;
+package com.shortener.example.shortener;
 
 import okhttp3.Call;
 import okhttp3.OkHttpClient;

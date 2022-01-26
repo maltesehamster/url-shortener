@@ -1,4 +1,4 @@
-package com.koa4.example.shortener;
+package com.shortener.example.shortener;
 
 public class UrlShortenerResult {
 

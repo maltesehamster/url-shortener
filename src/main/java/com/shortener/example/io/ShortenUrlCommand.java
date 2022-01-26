@@ -1,4 +1,4 @@
-package com.koa4.example.io;
+package com.shortener.example.io;
 
 public enum ShortenUrlCommand {
 

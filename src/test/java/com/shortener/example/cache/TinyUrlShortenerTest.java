@@ -1,6 +1,6 @@
-package com.koa4.example.cache;
+package com.shortener.example.cache;
 
-import com.koa4.example.shortener.TinyUrlShortener;
+import com.shortener.example.shortener.TinyUrlShortener;
 import okhttp3.OkHttpClient;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;

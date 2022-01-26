@@ -1,4 +1,4 @@
-package com.koa4.example.cache;
+package com.shortener.example.cache;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -125,7 +125,8 @@ public class InMemoryHitTrackingSimpleCacheTest {
         Assertions.assertEquals(2, unitUnderTest.topItems(3).get(2).getHitCount());
     }
 
-    private static void simulateNCacheHits(InMemoryHitTrackingSimpleCache<String, String> unitUnderTest, String key, String value, int count) {
+    private static void simulateNCacheHits(InMemoryHitTrackingSimpleCache<String, String> unitUnderTest, String key,
+            String value, int count) {
         unitUnderTest.put(key, value);
         for (int i = 0; i < count - 1; i++) {
             unitUnderTest.get(key);

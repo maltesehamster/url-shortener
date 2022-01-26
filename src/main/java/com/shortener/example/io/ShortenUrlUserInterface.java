@@ -1,6 +1,6 @@
-package com.koa4.example.io;
+package com.shortener.example.io;
 
-import com.koa4.example.cache.HitTrackingSimpleCacheItem;
+import com.shortener.example.cache.HitTrackingSimpleCacheItem;
 
 import java.util.List;
 

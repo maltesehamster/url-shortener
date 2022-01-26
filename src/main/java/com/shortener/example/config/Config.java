@@ -1,11 +1,11 @@
-package com.koa4.example.config;
+package com.shortener.example.config;
 
-import com.koa4.example.cache.HitTrackingSimpleCache;
-import com.koa4.example.cache.InMemoryHitTrackingSimpleCache;
-import com.koa4.example.io.ShortenUrlCommandLineUserInterface;
-import com.koa4.example.io.ShortenUrlUserInterface;
-import com.koa4.example.shortener.TinyUrlShortener;
-import com.koa4.example.shortener.UrlShortener;
+import com.shortener.example.cache.HitTrackingSimpleCache;
+import com.shortener.example.cache.InMemoryHitTrackingSimpleCache;
+import com.shortener.example.io.ShortenUrlCommandLineUserInterface;
+import com.shortener.example.io.ShortenUrlUserInterface;
+import com.shortener.example.shortener.TinyUrlShortener;
+import com.shortener.example.shortener.UrlShortener;
 import okhttp3.OkHttpClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
